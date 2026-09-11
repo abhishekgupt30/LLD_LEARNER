@@ -45,3 +45,11 @@ uploads/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Project documentation and deployment configuration must remain versioned
+!README.md
+!RESEARCH.md
+!DESIGN.md
+!AI_USAGE.md
+!docker-compose.yml
+!vercel.json

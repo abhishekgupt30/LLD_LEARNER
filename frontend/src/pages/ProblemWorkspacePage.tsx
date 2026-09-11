@@ -337,7 +337,7 @@ export const ProblemWorkspacePage: React.FC = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)] w-full overflow-hidden text-[#dfe2ee] bg-[#0f131c]">
       {/* ================= WORKSPACE SUB-HEADER & NAVIGATION STRIP ================= */}
-      <div className="h-14 bg-[#181c24] border-b border-[#262a33] px-layout-margin-desktop flex items-center justify-between gap-space-md shrink-0">
+      <div className="min-h-14 bg-[#181c24] border-b border-[#262a33] px-layout-margin-mobile lg:px-layout-margin-desktop py-space-sm lg:py-0 flex flex-wrap lg:flex-nowrap items-center justify-between gap-space-md shrink-0">
         {/* Left: Problem & Session Info */}
         <div className="flex items-center gap-space-md min-w-0">
           <Link
@@ -378,7 +378,7 @@ export const ProblemWorkspacePage: React.FC = () => {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-space-sm shrink-0">
+        <div className="flex items-center gap-space-sm shrink-0 max-w-full overflow-x-auto no-scrollbar">
           <button
             onClick={handleLoadStarter}
             className="hidden lg:flex items-center gap-1 px-2.5 py-1 text-xs rounded bg-[#262a33] hover:bg-[#353942] text-[#c7c4d7] transition-colors"
@@ -543,7 +543,7 @@ export const ProblemWorkspacePage: React.FC = () => {
         </section>
 
         {/* ================= PANE 2: BLUEPRINT EDITOR (5 COLS) ================= */}
-        <section className="col-span-1 lg:col-span-5 flex flex-col bg-[#0f131c] border-r border-[#262a33] overflow-hidden">
+        <section className="col-span-1 lg:col-span-5 min-h-0 flex flex-col bg-[#0f131c] border-r border-[#262a33] overflow-y-auto lg:overflow-hidden">
           {/* Section Header */}
           <div className="px-space-lg py-space-md bg-gradient-to-r from-[#181c24] to-[#1c2028] border-b border-[#31353e] flex items-center justify-between gap-space-sm shrink-0">
             <div className="min-w-0">
@@ -586,7 +586,7 @@ export const ProblemWorkspacePage: React.FC = () => {
           </div>
 
           {/* Textarea Workspace */}
-          <div className="flex-1 relative flex flex-col p-space-lg overflow-hidden bg-[#10141b]">
+          <div className="flex-1 relative flex flex-col min-h-[420px] lg:min-h-0 p-space-md lg:p-space-lg overflow-hidden bg-[#10141b]">
             <textarea
               value={sections[currentSection.key] || ''}
               onChange={(e) => handleSectionTextChange(currentSection.key, e.target.value)}
@@ -625,7 +625,7 @@ export const ProblemWorkspacePage: React.FC = () => {
         </section>
 
         {/* ================= PANE 3: ARCHITECTURE GRAPH & LIVE DIAGNOSTICS (4 COLS) ================= */}
-        <section className="col-span-1 lg:col-span-4 flex flex-col bg-[#141820] overflow-hidden">
+        <section className="hidden lg:flex col-span-1 lg:col-span-4 flex-col bg-[#141820] overflow-hidden">
           {/* Panel Tabs Header */}
           <div className="h-12 px-space-md bg-gradient-to-r from-[#181c24] to-[#1c2028] border-b border-[#31353e] flex items-center justify-between shrink-0">
             <div className="flex items-center gap-space-xs">
