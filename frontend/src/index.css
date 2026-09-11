@@ -101,6 +101,12 @@
   }
 }
 
+@keyframes loading-slide {
+  0% { transform: translateX(-120%); }
+  50% { transform: translateX(220%); }
+  100% { transform: translateX(360%); }
+}
+
 .text-headline-xl {
   font-size: 36px;
   line-height: 44px;

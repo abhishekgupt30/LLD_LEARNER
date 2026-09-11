@@ -115,7 +115,16 @@ export const EvaluationPage: React.FC = () => {
 
       <div className="w-full px-layout-margin-desktop space-y-space-2xl">
         {loadError && <div className="rounded-lg border border-[#ffb4ab]/40 bg-[#ffb4ab]/10 px-space-md py-space-sm text-sm text-[#ffb4ab]">{loadError}</div>}
-        {isProcessing && <div className="rounded-lg border border-[#8083ff]/40 bg-[#8083ff]/10 px-space-md py-space-sm text-sm text-[#c0c1ff]">Evaluation is still running. This page refreshes automatically while the evaluator finishes.</div>}
+        {isProcessing && <div className="rounded-lg border border-[#8083ff]/40 bg-[#8083ff]/10 px-space-md py-space-md text-sm text-[#c0c1ff]">
+          <div className="flex items-center justify-between gap-space-md">
+            <span className="flex items-center gap-space-sm"><span className="material-symbols-outlined animate-spin text-lg">progress_activity</span>Evaluating your design with the LLM…</span>
+            <span className="font-label-ui text-label-ui text-[#908fa0]">Please wait</span>
+          </div>
+          <div className="mt-space-sm h-1.5 w-full overflow-hidden rounded-full bg-[#262a33]">
+            <div className="h-full w-1/3 animate-[loading-slide_1.6s_ease-in-out_infinite] rounded-full bg-[#8083ff]"></div>
+          </div>
+          <p className="mt-space-xs text-xs text-[#908fa0]">Deterministic checks are complete. Gemini is preparing architectural feedback.</p>
+        </div>}
         {isFailed && <div className="rounded-lg border border-[#ffb4ab]/40 bg-[#ffb4ab]/10 px-space-md py-space-sm text-sm text-[#ffb4ab]">Evaluation failed. Your submission is preserved; use the retry action or submit again after checking the backend configuration.</div>}
         {!isProcessing && !isFailed && !hasGeminiFeedback && <div className="rounded-lg border border-amber-400/40 bg-amber-400/10 px-space-md py-space-sm text-sm text-amber-300 flex flex-wrap items-center justify-between gap-space-sm"><span>{isGeminiLimitReached ? 'Daily AI evaluation limit of 50 requests reached. This report contains deterministic completeness and concept feedback.' : 'AI reasoning was temporarily unavailable, so this report contains deterministic completeness and concept feedback.'}</span>{!isGeminiLimitReached && <button type="button" onClick={retryAiEvaluation} disabled={isRetrying} className="px-space-sm py-space-xs rounded bg-amber-400/20 text-amber-200 font-semibold disabled:opacity-50">{isRetrying ? 'Retrying…' : 'Retry AI evaluation'}</button>}</div>}
         {/* ================= SCORECARD HERO BENTO ================= */}
