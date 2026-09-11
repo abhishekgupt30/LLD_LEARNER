@@ -454,6 +454,16 @@ export const ProblemWorkspacePage: React.FC = () => {
         })}
       </div>
 
+      <section className="lg:hidden shrink-0 bg-[#141820] border-b border-[#262a33] px-space-md py-space-md">
+        <div className="flex items-center gap-space-xs mb-space-xs">
+          <span className="material-symbols-outlined text-sm text-[#4cd7f6]">description</span>
+          <span className="font-label-ui text-label-ui font-semibold text-[#dfe2ee] uppercase tracking-wider">Problem Description</span>
+        </div>
+        <p className="font-body-sm text-body-sm text-[#c7c4d7] leading-relaxed break-words whitespace-normal">
+          {displayProblem.description}
+        </p>
+      </section>
+
       {/* ================= 3-PANE WORKSPACE BODY ================= */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
         {/* ================= PANE 1: PROBLEM SPEC & CONSTRAINTS (3 COLS) ================= */}

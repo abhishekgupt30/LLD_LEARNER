@@ -82,6 +82,13 @@
     background-color: #0f131c;
     color: #dfe2ee;
     font-family: "Inter", sans-serif;
+    max-width: 100%;
+  }
+
+  @media (max-width: 1279px) {
+    html, body, #root {
+      overflow-x: hidden;
+    }
   }
   
   /* Custom thin scrollbar */

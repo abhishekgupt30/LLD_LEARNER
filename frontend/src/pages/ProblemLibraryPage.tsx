@@ -355,7 +355,7 @@ export const ProblemLibraryPage: React.FC = () => {
                         )}
                       </h2>
 
-                      <p className="font-body-md text-body-md text-[#c7c4d7] max-w-3xl leading-relaxed">
+                      <p className="font-body-md text-body-md text-[#c7c4d7] max-w-3xl leading-relaxed break-words whitespace-normal">
                         {problem.description}
                       </p>
                     </div>
