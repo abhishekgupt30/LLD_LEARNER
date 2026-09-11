@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LOGO_URL } from '../components/layout/TopNavigation';
+import { BrandLogo } from '../components/layout/TopNavigation';
 
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
@@ -33,13 +33,9 @@ export const LoginPage: React.FC = () => {
       <div className="max-w-md w-full space-y-space-xl z-10">
         <div className="text-center space-y-space-xs">
           <Link to="/" className="inline-flex items-center gap-space-sm group">
-            <img
-              alt="Brand logo"
-              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
-              src={LOGO_URL}
-            />
+            <BrandLogo className="h-12 w-12 transition-transform group-hover:scale-105" />
             <span className="font-headline-sm text-headline-sm font-bold tracking-tight text-[#dfe2ee]">
-              LLD <span className="text-[#8083ff]">Mentor</span>
+              LLD<span className="text-[#8083ff]">Lotion</span>
             </span>
           </Link>
           <h2 className="font-headline-lg text-headline-lg font-bold text-[#dfe2ee]">

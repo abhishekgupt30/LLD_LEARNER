@@ -8,6 +8,20 @@ export const LOGO_URL =
 export const AVATAR_URL =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuD_XYErBzq-6SqYSbftSHr7i32NHmbjVR_VIxaSN1-ZFZbaPuxVBe-a-m7WFdpxdohfnK5nidrfi2p5DiQyG1k4wAgfuOqGacZyN2bTdPyDOHV3hKbFvv0WPR7F-RISrHMWMi2Tc6vkWkTMCbff5RuZ9_T0LSXJlhvYrnDGPPQCaOupmwiPzFOxOhG-IgUR5wSLasYdjcXi-OK57-ViS7o14K9aBAHLIKjH4eHadw4SS_U4ykzbpFA';
 
+export const BrandLogo: React.FC<{ className?: string }> = ({ className = 'h-8 w-8' }) => (
+  <svg className={className} viewBox="0 0 40 40" role="img" aria-label="LLD Lotion logo" fill="none">
+    <rect width="40" height="40" rx="11" fill="#4F46E5" />
+    <path d="M13 10h16v4H17v6h10v4H17v9h-4V10Z" fill="#E0E7FF" />
+    <circle cx="29" cy="8" r="2" fill="#E0E7FF" />
+  </svg>
+);
+
+export const GenericAvatar: React.FC<{ className?: string }> = ({ className = 'h-8 w-8' }) => (
+  <div className={`${className} rounded-full bg-[#c0c1ff] border border-[#464554]/70 flex items-center justify-center`} aria-label="Generic profile avatar">
+    <span className="material-symbols-outlined text-[#1000a9] text-[20px]">person</span>
+  </div>
+);
+
 export const TopNavigation: React.FC = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -28,13 +42,9 @@ export const TopNavigation: React.FC = () => {
         {/* Left Brand + Desktop Nav */}
         <div className="flex items-center gap-space-xl">
           <Link to={user ? '/dashboard' : '/'} className="flex items-center gap-space-sm group">
-            <img
-              alt="LLD Mentor Logo"
-              className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              src={LOGO_URL}
-            />
+            <BrandLogo className="h-10 w-10 transition-transform group-hover:scale-105" />
             <span className="font-headline-sm text-headline-sm text-[#dfe2ee] tracking-tight font-semibold">
-              LLD <span className="text-[#c0c1ff]">Mentor</span>
+              LLD<span className="text-[#c0c1ff]">Lotion</span>
             </span>
           </Link>
 
@@ -68,11 +78,7 @@ export const TopNavigation: React.FC = () => {
               className="flex items-center gap-space-sm pl-space-xs text-left focus:outline-none"
               type="button"
             >
-              <img
-                alt="Profile"
-                className="w-8 h-8 rounded-full object-cover border border-[#464554]/60"
-                src={user?.avatarUrl || AVATAR_URL}
-              />
+              <GenericAvatar className="w-8 h-8" />
               <div className="hidden sm:flex flex-col text-left">
                 <span className="font-label-ui text-label-ui text-[#dfe2ee] font-medium leading-none">
                   {user?.name || 'Alex Rivera'}

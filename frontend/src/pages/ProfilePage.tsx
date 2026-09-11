@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { AVATAR_URL } from '../components/layout/TopNavigation';
+import { GenericAvatar } from '../components/layout/TopNavigation';
 import { api } from '../services/api';
 
 export const ProfilePage: React.FC = () => {
@@ -34,11 +34,7 @@ export const ProfilePage: React.FC = () => {
           {/* Left Column: User Card */}
           <div className="lg:col-span-4 bg-[#181c24] p-space-xl rounded-2xl border border-[#262a33] shadow-lg space-y-space-lg">
             <div className="flex items-center gap-space-md">
-              <img
-                alt="Profile Avatar"
-                className="w-16 h-16 rounded-full object-cover border-2 border-[#8083ff]"
-                src={user?.avatarUrl || AVATAR_URL}
-              />
+              <GenericAvatar className="w-16 h-16 border-2 border-[#8083ff]" />
               <div>
                 <h2 className="font-headline-sm text-body-lg font-bold text-[#dfe2ee]">
                   {user?.name || 'Engineer'}

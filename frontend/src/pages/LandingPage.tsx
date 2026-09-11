@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LOGO_URL } from '../components/layout/TopNavigation';
+import { BrandLogo } from '../components/layout/TopNavigation';
 import { useAuth } from '../context/AuthContext';
 
 export const LandingPage: React.FC = () => {
@@ -10,16 +10,12 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0f131c] text-[#dfe2ee] font-body-md antialiased selection:bg-[#8083ff] selection:text-[#0d0096]">
       {/* Top Fixed Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#0f131c]/85 backdrop-blur-xl border-b border-[#262a33]/60 shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
-        <div className="h-16 max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop flex items-center justify-between gap-space-lg">
+      <header className="fixed inset-x-0 top-0 z-[100] h-20 overflow-visible bg-[#0f131c]/95 backdrop-blur-xl border-b border-[#262a33]/60 shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+        <div className="h-20 max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop flex items-center justify-between gap-space-lg">
           <Link to="/" className="flex items-center gap-space-sm group">
-            <img
-              alt="Brand logo"
-              className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              src={LOGO_URL}
-            />
+            <BrandLogo className="h-12 w-12 transition-transform group-hover:scale-105" />
             <span className="font-headline-sm text-headline-sm tracking-tight text-[#dfe2ee]">
-              LLD<span className="text-[#8083ff] font-semibold">Mentor</span>
+              LLD<span className="text-[#8083ff] font-semibold">Lotion</span>
             </span>
           </Link>
 
@@ -48,7 +44,7 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Main Container */}
-      <main className="w-full pt-16 bg-[#0f131c]">
+      <main className="w-full pt-20 bg-[#0f131c]">
         <div className="flex flex-col w-full">
           {/* Ambient Light Accents */}
           <div className="relative w-full overflow-hidden">
@@ -56,15 +52,20 @@ export const LandingPage: React.FC = () => {
             <div className="absolute top-96 -left-32 w-[380px] h-[380px] bg-[#00a572]/10 blur-[100px] pointer-events-none rounded-full"></div>
 
             {/* 1. HERO SECTION */}
-            <section className="relative max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop pt-space-2xl lg:pt-space-3xl pb-space-3xl">
-              <div className="hidden">
-                <h1 className="max-w-3xl font-headline-xl text-headline-xl sm:text-[44px] sm:leading-[52px] font-bold text-[#dfe2ee] tracking-tight">
-                  Design systems with clarity
+            <section className="relative max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop pt-space-2xl pb-space-3xl">
+              <div className="flex flex-col lg:flex-row gap-space-2xl items-center">
+                <div className="w-full lg:w-1/2 max-w-2xl">
+                <div className="hidden">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#4edea3]"></span>
+                  Built for L5–L7 machine coding interviews
+                </div>
+                <h1 className="mt-0 max-w-3xl font-headline-xl text-headline-xl sm:text-[52px] sm:leading-[58px] font-bold text-[#dfe2ee] tracking-tight">
+                  Turn low-level design into <span className="text-[#c0c1ff]">interview-ready architecture.</span>
                 </h1>
                 <p className="font-body-lg text-body-lg text-[#c7c4d7] mt-space-sm max-w-2xl leading-relaxed">
                   The precision workbench engineered for senior software engineers preparing for L5–L7 machine coding screens. Deconstruct architectures with the 11-section blueprint and deterministic AST validation.
                 </p>
-                <div className="mt-space-lg flex flex-wrap items-center justify-center gap-space-md">
+                <div className="mt-space-3xl flex flex-wrap items-center gap-space-md">
                   <Link
                     to={applicationPath}
                     className="flex items-center gap-space-xs px-space-xl py-space-sm rounded-lg bg-[#8083ff] text-[#dfe2ee] hover:bg-[#c0c1ff] hover:text-[#1000a9] font-label-ui text-label-ui font-semibold transition-all shadow-[0_0_20px_rgba(128,131,255,0.28)]"
@@ -79,6 +80,23 @@ export const LandingPage: React.FC = () => {
                     <span className="material-symbols-outlined text-[18px]">menu_book</span>
                     <span>Explore Problem Library</span>
                   </Link>
+                </div>
+                <div className="hidden">
+                  <div className="flex-1"><p className="font-headline-sm text-headline-sm text-[#dfe2ee]">11-step</p><p className="mt-space-2xs font-body-sm text-body-sm text-[#908fa0]">design blueprint</p></div>
+                  <div className="flex-1"><p className="font-headline-sm text-headline-sm text-[#dfe2ee]">Dual</p><p className="mt-space-2xs font-body-sm text-body-sm text-[#908fa0]">evaluation engine</p></div>
+                  <div className="flex-1"><p className="font-headline-sm text-headline-sm text-[#dfe2ee]">&lt;3 sec</p><p className="mt-space-2xs font-body-sm text-body-sm text-[#908fa0]">actionable feedback</p></div>
+                </div>
+                </div>
+                <div className="hidden lg:flex w-1/2 relative min-h-[250px] items-center justify-end">
+                  <div className="absolute inset-8 rounded-full bg-[#8083ff]/10 blur-3xl"></div>
+                  <div className="relative w-full max-w-[640px] rounded-2xl border border-[#464554]/70 bg-[#0a0e16]/90 p-space-md shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+                    <div className="flex items-center justify-between border-b border-[#262a33] pb-space-sm"><span className="font-label-code text-label-code text-[#c7c4d7]">LIVE ARCHITECTURE REVIEW</span><span className="font-label-code text-label-code text-[#4edea3]">● RUNNING</span></div>
+                    <div className="mt-space-md grid grid-cols-[1.1fr_0.9fr] gap-space-sm">
+                      <div className="rounded-lg border border-[#262a33] bg-[#181c24] p-space-sm"><span className="font-label-code text-label-code text-[#908fa0]">CLASS GRAPH</span><div className="mt-space-md flex items-center justify-center gap-space-xs"><div className="rounded border border-[#4cd7f6]/50 bg-[#4cd7f6]/10 px-space-sm py-space-md text-center"><span className="block font-label-code text-label-code text-[#4cd7f6]">INTERFACE</span><span className="font-code-block text-code-block text-[#dfe2ee]">Payment</span></div><span className="text-[#908fa0]">→</span><div className="rounded border border-[#c0c1ff]/50 bg-[#8083ff]/10 px-space-sm py-space-md text-center"><span className="block font-label-code text-label-code text-[#c0c1ff]">SERVICE</span><span className="font-code-block text-code-block text-[#dfe2ee]">Checkout</span></div></div></div>
+                      <div className="rounded-lg border border-[#262a33] bg-[#181c24] p-space-sm"><span className="font-label-code text-label-code text-[#908fa0]">QUALITY SCORE</span><div className="mt-space-sm flex items-end gap-space-sm"><span className="font-headline-xl text-headline-xl text-[#4edea3]">88</span><span className="mb-space-xs font-label-code text-label-code text-[#4edea3]">/ 100</span></div><div className="mt-space-sm h-1.5 rounded-full bg-[#262a33]"><div className="h-full w-[88%] rounded-full bg-[#4edea3]"></div></div><p className="mt-space-sm font-label-code text-label-code text-[#908fa0]">STAFF-READY SIGNALS</p></div>
+                    </div>
+                    <div className="mt-space-sm rounded-lg border border-[#4edea3]/20 bg-[#4edea3]/5 px-space-sm py-space-sm font-label-code text-label-code text-[#4edea3]">✓ No circular dependencies · ✓ Lock scope looks healthy</div>
+                  </div>
                 </div>
               </div>
 
@@ -416,11 +434,11 @@ export const LandingPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* The LLD Mentor Standard Card */}
+                {/* The LLD Lotion Standard Card */}
                 <div className="p-space-xl rounded-xl bg-[#1c2028] border border-[#464554] flex flex-col justify-between shadow-xl">
                   <div className="flex flex-col gap-space-md">
                     <div className="flex items-center justify-between">
-                      <span className="font-headline-sm text-body-lg font-bold text-[#dfe2ee]">The LLD Mentor Standard</span>
+                      <span className="font-headline-sm text-body-lg font-bold text-[#dfe2ee]">The LLD Lotion Standard</span>
                       <span className="px-space-sm py-space-2xs rounded bg-[#00a572]/20 text-[#4edea3] font-label-code text-label-code font-semibold">
                         ENGINEERED FOR L6+
                       </span>
@@ -656,18 +674,21 @@ export const LandingPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-[#0a0e16] border-t border-[#262a33]/60">
-        <div className="max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop py-space-3xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
-            <div className="lg:col-span-2 flex flex-col gap-space-md">
+      <footer className="relative w-full overflow-hidden bg-[#080c14] border-t border-[#262a33]/60">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#8083ff]/70 to-transparent"></div>
+        <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-[#4cd7f6]/5 blur-3xl pointer-events-none"></div>
+        <div className="relative max-w-7xl mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop py-space-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr] gap-space-2xl lg:gap-space-3xl mb-space-3xl">
+            <div className="flex flex-col gap-space-md">
               <div className="flex items-center gap-space-sm">
-                <img alt="Brand logo" className="h-8 w-auto object-contain" src={LOGO_URL} />
-                <span className="font-headline-sm text-headline-sm text-[#dfe2ee] font-semibold">LLD Mentor</span>
+                <BrandLogo className="h-10 w-10" />
+                <span className="font-headline-sm text-headline-sm text-[#dfe2ee] font-semibold">LLD<span className="text-[#c0c1ff]">Lotion</span></span>
               </div>
+              <span className="font-label-code text-label-code uppercase tracking-wider text-[#8083ff]">Practice with precision</span>
               <p className="text-[#c7c4d7] font-body-md text-body-md max-w-sm">
                 The interactive workbench for senior software engineers preparing for Staff+ and Principal Object-Oriented Design, Concurrency, and System Architecture interviews.
               </p>
-              <div className="flex items-center gap-space-sm pt-space-xs">
+              <div className="flex flex-wrap items-center gap-space-sm pt-space-xs">
                 <span className="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-[#181c24] border border-[#4edea3]/30 text-[#4edea3] font-label-code text-label-code">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#4edea3] animate-pulse"></span>
                   ENGINE ONLINE
@@ -677,10 +698,10 @@ export const LandingPage: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-md">
+              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-lg">
                 Problem Catalogue
               </h4>
-              <ul className="flex flex-col gap-space-sm font-body-sm text-body-sm text-[#c7c4d7]">
+              <ul className="flex flex-col gap-space-md font-body-sm text-body-sm text-[#aeadc0]">
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">
                   <Link to={applicationPath}>Parking Lot Architecture (Tier 1)</Link>
                 </li>
@@ -700,11 +721,11 @@ export const LandingPage: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-md">
+              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-lg">
                 Benchmarking
               </h4>
-              <ul className="flex flex-col gap-space-sm font-body-sm text-body-sm text-[#c7c4d7]">
-                <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">LLD Mentor vs. LeetCode</li>
+              <ul className="flex flex-col gap-space-md font-body-sm text-body-sm text-[#aeadc0]">
+                <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">LLD Lotion vs. LeetCode</li>
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">LLD vs High-Level System Design</li>
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">Staff Engineer Interview Rubrics</li>
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">SOLID &amp; GoF Pattern Matrix</li>
@@ -713,10 +734,10 @@ export const LandingPage: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-md">
+              <h4 className="font-headline-sm text-body-md text-[#dfe2ee] font-semibold uppercase tracking-wider mb-space-lg">
                 Resources &amp; Social
               </h4>
-              <ul className="flex flex-col gap-space-sm font-body-sm text-body-sm text-[#c7c4d7]">
+              <ul className="flex flex-col gap-space-md font-body-sm text-body-sm text-[#aeadc0]">
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">Interactive UML Cheatsheet</li>
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">Technical Blog &amp; Postmortems</li>
                 <li className="hover:text-[#c0c1ff] transition-colors cursor-pointer">Discord Architecture Guild</li>
@@ -726,11 +747,11 @@ export const LandingPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-space-xl border-t border-[#262a33]/40 flex flex-col sm:flex-row items-center justify-between gap-space-md">
+          <div className="pt-space-xl border-t border-[#262a33]/70 flex flex-col sm:flex-row items-center justify-between gap-space-lg">
             <div className="flex items-center gap-space-md font-body-sm text-body-sm text-[#908fa0]">
-              <p>© 2025 LLD Mentor Labs Inc. Designed for Engineering Architects.</p>
+              <p>© 2025 LLD Lotion Labs Inc. Designed for Engineering Architects.</p>
             </div>
-            <div className="flex items-center gap-space-lg font-body-sm text-body-sm text-[#c7c4d7]">
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-space-lg gap-y-space-sm font-body-sm text-body-sm text-[#aeadc0]">
               <span className="hover:text-[#dfe2ee] transition-colors cursor-pointer">System Status: 99.99%</span>
               <span className="hover:text-[#dfe2ee] transition-colors cursor-pointer">Privacy Policy</span>
               <span className="hover:text-[#dfe2ee] transition-colors cursor-pointer">Terms of Service</span>
