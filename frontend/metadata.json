@@ -1,0 +1,6 @@
+{
+  "name": "LLD Mentor",
+  "description": "Low-Level Design & System Architecture practice and evaluation platform for Staff-level engineers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

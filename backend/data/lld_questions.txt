@@ -1,0 +1,138 @@
+LLD TEACHING PLATFORM — SAMPLE QUESTION DATA
+
+Question 1
+Title: Parking Lot System
+Difficulty: Easy
+Prerequisites: OOP, Interfaces, Strategy Pattern
+Description: Design a parking lot that supports multiple floors and vehicle types. Vehicles should be assigned suitable parking spots and charged based on parking duration and vehicle type.
+Sample Scenario: A car enters, receives a ticket, gets a spot, parks for 3 hours, and exits after payment.
+Requirements:
+- Support multiple parking floors and spots.
+- Support car, bike, and truck vehicles.
+- Allocate and release parking spots.
+- Generate parking tickets.
+- Calculate parking fees.
+- Support different pricing strategies.
+Constraints:
+- Multiple vehicles may enter concurrently.
+- Spot allocation must not assign the same spot twice.
+Hints:
+- Separate parking, allocation, ticketing, and pricing responsibilities.
+- Consider Strategy for allocation and pricing.
+Expected Concepts: SOLID, Strategy, composition, interfaces, concurrency
+Evaluation Criteria:
+- Clear responsibilities
+- Good abstractions
+- Correct relationships
+- Extensible pricing/allocation
+- Handles concurrency and edge cases
+
+Question 2
+Title: Elevator System
+Difficulty: Easy
+Prerequisites: OOP, State/Strategy Pattern
+Description: Design an elevator system for a building with multiple elevators and floors.
+Sample Scenario: A user requests an elevator from floor 7 to floor 15. The system selects an appropriate elevator and processes the request.
+Requirements:
+- Multiple elevators and floors.
+- Internal and external requests.
+- Select the best elevator.
+- Move elevators between floors.
+- Track elevator state and direction.
+- Handle concurrent requests.
+Constraints:
+- Avoid conflicting elevator assignments.
+- Requests may arrive simultaneously.
+Hints:
+- Separate request handling, elevator selection, and elevator movement.
+- Consider Strategy for elevator selection.
+Expected Concepts: Strategy, State, SOLID, concurrency
+Evaluation Criteria:
+- Good domain modeling
+- Appropriate abstractions
+- Extensible selection logic
+- Correct state handling
+- Concurrency considerations
+
+Question 3
+Title: Online Food Ordering System
+Difficulty: Medium
+Prerequisites: OOP, SOLID, Strategy, Observer
+Description: Design a food ordering platform where users browse restaurants, create orders, pay, and track order status.
+Sample Scenario: A user selects items from a restaurant, places an order, pays, and receives status updates until delivery.
+Requirements:
+- Users can browse restaurants and menus.
+- Create and modify orders before confirmation.
+- Support multiple payment methods.
+- Track order lifecycle.
+- Notify users when order status changes.
+- Calculate discounts and delivery charges.
+Constraints:
+- Payment and notification implementations should be replaceable.
+- Order state transitions must be valid.
+Hints:
+- Use Strategy for payment/discount logic.
+- Use Observer for order status notifications.
+Expected Concepts: Strategy, Observer, State, SOLID
+Evaluation Criteria:
+- Separation of concerns
+- Correct order lifecycle
+- Extensible payment/discount design
+- Notification abstraction
+- Edge-case handling
+
+Question 4
+Title: Rate Limiter
+Difficulty: Medium
+Prerequisites: OOP, concurrency, basic distributed systems
+Description: Design a rate limiter that restricts how many requests a user or API client can make within a time window.
+Sample Scenario: An API allows 100 requests per minute per user. The 101st request is rejected until capacity becomes available.
+Requirements:
+- Rate limit by user/API key.
+- Support configurable limits.
+- Allow requests or reject them.
+- Support multiple rate-limiting algorithms.
+- Be thread-safe.
+- Provide a way to inspect remaining capacity.
+Constraints:
+- High concurrency.
+- Low latency.
+- The design should allow future distributed implementation.
+Hints:
+- Define a RateLimiter interface.
+- Consider Token Bucket, Fixed Window, or Sliding Window strategies.
+Expected Concepts: Strategy, interfaces, concurrency, synchronization
+Evaluation Criteria:
+- Correct algorithm abstraction
+- Thread safety
+- Performance awareness
+- Extensibility
+- Clear trade-offs
+
+Question 5
+Title: Notification System
+Difficulty: Medium
+Prerequisites: OOP, SOLID, Strategy, Observer
+Description: Design a notification system that sends messages through multiple channels such as email, SMS, and push notifications.
+Sample Scenario: A user's order is completed and the platform sends an email and push notification based on user preferences.
+Requirements:
+- Support email, SMS, and push channels.
+- Support user notification preferences.
+- Allow different message templates.
+- Support retries for failed delivery.
+- Allow new channels to be added without modifying core logic.
+- Track notification status.
+Constraints:
+- Delivery providers may change.
+- Sending can be asynchronous.
+Hints:
+- Use a NotificationChannel interface.
+- Use Strategy or Factory for channel selection.
+- Consider Observer/event-driven notification triggering.
+Expected Concepts: Strategy, Factory, Observer, SOLID, async processing
+Evaluation Criteria:
+- Extensibility
+- Provider abstraction
+- Clean separation of concerns
+- Retry/error handling
+- Appropriate design patterns

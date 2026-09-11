@@ -1,0 +1,47 @@
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+*.secret
+secrets/
+credentials/
+api-keys/
+**/*api-key*
+**/*api_key*
+**/*access-token*
+**/*access_token*
+**/*private-key*
+**/*private_key*
+service-account*.json
+*credentials*.json
+*.pem
+*.key
+*.crt
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.vite/
+
+# Python virtual environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Logs and local runtime data
+*.log
+logs/
+uploads/
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
