@@ -1,6 +1,6 @@
 // Generic API client abstraction configured for future backend integration
-const API_BASE_URL = (import.meta as { env?: Record<string, string> }).env?.VITE_API_BASE_URL || 'http://localhost:8001/api';
-const API_URLS = [API_BASE_URL, 'http://localhost:8000/api'].filter((url, index, all) => all.indexOf(url) === index);
+const API_BASE_URL = (import.meta as { env?: Record<string, string> }).env?.VITE_API_BASE_URL || '/api';
+const API_URLS = [API_BASE_URL, '/api'].filter((url, index, all) => all.indexOf(url) === index);
 
 
 export class ApiClient {
