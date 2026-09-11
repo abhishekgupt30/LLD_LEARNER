@@ -1,5 +1,4 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
     "frontend": {
       "root": "frontend/",
@@ -19,9 +18,13 @@
       }
     },
     {
-      "source": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "source": "/((?!api).*)*",
       "destination": {
-        "service": "frontend"
+        "service": "frontend",
+        "path": "index.html"
       }
     }
   ]
